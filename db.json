@@ -1,4 +1,18 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "f823",
+      "phone": "0701310736",
+      "firstName": "Uma Madhuri",
+      "lastName": "Ranga",
+      "email": "umamadhurir@gmail.co"
+    },
+    {
+      "id": "3822",
+      "firstName": "Uma Madhuri",
+      "lastName": "Ranga",
+      "phone": "7013107364",
+      "email": "umamadhurir@gmail.com"
+    }
+  ]
 }
-

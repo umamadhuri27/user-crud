@@ -1,5 +1,7 @@
+import UsersPage from "./pages/UsersPage";
+
 function App() {
-  return <h1>User CRUD App</h1>;
+  return <UsersPage />;
 }
 
 export default App;
