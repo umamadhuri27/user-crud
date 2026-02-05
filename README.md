@@ -168,12 +168,10 @@ Hosted using Render.
 LIVE DEMO
 
 Frontend:
+https://react-user-crud-olive.vercel.app
 
 Backend API:
 https://user-crud-api-ec1b.onrender.com/users
 
---------------------------------------------------
 
-Author
 
-Developed as part of a technical assignment demonstrating React architecture, API integration, and extensible UI design.
