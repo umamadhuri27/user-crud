@@ -9,11 +9,11 @@ const UsersPage = () => {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-  if (message) {
-    const timer = setTimeout(() => setMessage(""), 3000);
-    return () => clearTimeout(timer);
-  }
-}, [message]);
+    if (message) {
+      const timer = setTimeout(() => setMessage(''), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
 
   const clearSelection = () => {
     setSelectedUser(null);
@@ -41,15 +41,14 @@ const UsersPage = () => {
         }}
       >
         <h1 style={{ textAlign: 'center' }}>User Management</h1>
-       
 
         <UserForm
           selectedUser={selectedUser}
           refreshUsers={fetchUsers}
           clearSelection={clearSelection}
           setMessage={setMessage}
-          />
- {message && (
+        />
+        {message && (
           <p
             style={{
               color: 'green',

@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import { deleteUser } from '../services/userService';
 
-const UserList = ({ users, refreshUsers, onEdit , setMessage }) => {
+const UserList = ({ users, refreshUsers, onEdit, setMessage }) => {
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm(
       'Are you sure you want to delete this user?',
@@ -10,7 +10,7 @@ const UserList = ({ users, refreshUsers, onEdit , setMessage }) => {
     if (!confirmDelete) return;
 
     await deleteUser(id);
-    setMessage("User deleted successfully!");
+    setMessage('User deleted successfully!');
     refreshUsers();
   };
 
@@ -20,41 +20,36 @@ const UserList = ({ users, refreshUsers, onEdit , setMessage }) => {
 
       {users.length === 0 && <p>No users available</p>}
 
-     {users.map((user) => (
-  <div
-    key={user.id}
-    style={{
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      
-      padding: "6px 0",
-      
-    }}
-  >
-    {/* User Info */}
-    <span>
-      {user.firstName} {user.lastName} | {user.email} | {user.phone}
-    </span>
+      {users.map((user) => (
+        <div
+          key={user.id}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
 
-    {/* Buttons */}
-    <div style={{ display: "flex", gap: "10px" }}>
-      <Button size="small" onClick={() => onEdit(user)}>
-        Edit
-      </Button>
+            padding: '6px 0',
+          }}
+        >
+          <span>
+            {user.firstName} {user.lastName} | {user.email} | {user.phone}
+          </span>
 
-      <Button
-        size="small"
-        color="error"
-        onClick={() => handleDelete(user.id)}
-      >
-        Delete
-      </Button>
-    </div>
-  </div>
-))}
+          <div style={{ display: 'flex', gap: '10px' }}>
+            <Button size="small" onClick={() => onEdit(user)}>
+              Edit
+            </Button>
 
-
+            <Button
+              size="small"
+              color="error"
+              onClick={() => handleDelete(user.id)}
+            >
+              Delete
+            </Button>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
