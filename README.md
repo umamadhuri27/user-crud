@@ -168,10 +168,9 @@ Hosted using Render.
 LIVE DEMO
 
 Frontend:
-<Your Vercel Link>
 
 Backend API:
-<Your Render API Link>
+https://user-crud-api-ec1b.onrender.com/users
 
 --------------------------------------------------
 
