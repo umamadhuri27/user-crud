@@ -4,7 +4,12 @@ import { userFormFields } from '../config/userFormConfig';
 import { validateField } from '../utils/validation';
 import { createUser, updateUser } from '../services/userService';
 
-const UserForm = ({ selectedUser, refreshUsers, clearSelection }) => {
+const UserForm = ({
+  selectedUser,
+  refreshUsers,
+  clearSelection,
+  setMessage,
+}) => {
   const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState({});
 
@@ -33,8 +38,10 @@ const UserForm = ({ selectedUser, refreshUsers, clearSelection }) => {
 
     if (selectedUser) {
       await updateUser(selectedUser.id, formData);
+      setMessage('User updated successfully!');
     } else {
       await createUser(formData);
+      setMessage('User created successfully!');
     }
 
     refreshUsers();
